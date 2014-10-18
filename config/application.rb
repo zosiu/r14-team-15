@@ -27,8 +27,9 @@ module CodingRomeo
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.precompile += ['classie.js', 'cbpAnimatedHeader.js',
-                                  'jquery.easing.min.js']
+    config.assets.precompile += [ 'classie.js', 'cbpAnimatedHeader.js',
+                                  'jquery.easing.min.js',
+                                  'raphael.min.js', 'metisMenu.js' ]
 
   end
 end
