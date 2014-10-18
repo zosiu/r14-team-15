@@ -4,9 +4,9 @@
       .col-xs-3
         %i.fa.fa-cubes.fa-5x
       .col-xs-9.text-right
-        .huge 26
+        .huge= codeship_projects.count
         %div Projects
-  %a{:href => "#"}
+  %a{href: admin_projects_path}
     .panel-footer
       %span.pull-left View Details
       %span.pull-right

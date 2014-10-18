@@ -2,7 +2,7 @@
   .sidebar-nav.navbar-collapse
     %ul#side-menu.nav
       %li
-        %a.active{href: admin_root_path}
+        %a{href: admin_root_path, class: (action?('index') ? 'active' : nil) }
           %i.fa.fa-heart-o.fa-fw
           Dashboard
       %li
@@ -14,7 +14,7 @@
           %i.fa.fa-users.fa-fw
           Developers
       %li
-        %a{href: '#'}
+        %a{href: admin_projects_path, class: (action?('projects') ? 'active' : nil) }
           %i.fa.fa-cubes.fa-fw
           Projects
       %li

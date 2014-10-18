@@ -8,10 +8,10 @@ class Codeship
 
     response = http_request.get(projects_uri).response
     @projects = if response.code == '200'
-      JSON.parse(response.body)['projects']
-    else
-      []
-    end
+                  JSON.parse(response.body)['projects']
+                else
+                  []
+                end
   end
 
   # only returns the last 10 builds :(

@@ -36,10 +36,6 @@ class User < ActiveRecord::Base
                                 repository_name: project['repository_name'])
                         .first_or_create!
       CodeshipProjectRelation.where(user: self, codeship_project: p).first_or_create!
-
-
-
     end
   end
-
 end
