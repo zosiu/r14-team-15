@@ -44,12 +44,12 @@ $ ->
 
 $ ->
   $("form#loginForm").bind "ajax:success", (e, data, status, xhr) ->
-    if data.success
-      window.location.replace '/admin'
-    else
-      login_error = $(this).find '#login-error'
-      login_error.empty()
-      login_error.text "Invalid email or password!"
+    window.location.replace '/admin'
+
+  $("form#loginForm").bind "ajax:error", (e, data, status, xhr) ->
+    login_error = $(this).find '#login-error'
+    login_error.empty()
+    login_error.text data.responseText
 
 $ ->
   $("form#registrationForm").bind "ajax:success", (e, data, status, xhr) ->
