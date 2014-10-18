@@ -14,6 +14,7 @@ class Codeship
     end
   end
 
+  # only returns the last 10 builds :(
   def project(uuid)
     response = http_request.get(project_uri(uuid)).response
 
