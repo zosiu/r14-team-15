@@ -1,2 +1,21 @@
-%h1 Admin#index
-%p Find me in app/views/admin/index.html.haml
+.row
+  .col-lg-12
+    %h1.page-header Dashboard
+  / /.col-lg-12
+/ /.row
+.row
+  .col-lg-3.col-md-6
+    = render 'projects_summary'
+  .col-lg-3.col-md-6
+    = render 'developers_summary'
+  .col-lg-3.col-md-6
+    = render 'green_builds_summary'
+  .col-lg-3.col-md-6
+    = render 'red_builds_summary'
+/ /.row
+.row
+  .col-lg-8
+    = render 'build_timeline'
+  .col-lg-4
+    = render 'top_developers'
+    = render 'top_projects'
