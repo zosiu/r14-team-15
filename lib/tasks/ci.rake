@@ -1,4 +1,4 @@
-begin
+if Rails.env.test? || Rails.env.development?
   require 'rspec/core/rake_task'
   require 'rubocop/rake_task'
 
@@ -41,6 +41,4 @@ begin
       Rake::Task['ci:specs'].invoke
     end
   end
-rescue => e
-  puts "Error #{e.message}"
 end

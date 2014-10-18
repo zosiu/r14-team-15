@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap-sprockets
+//= require twitter/bootstrap/rails/confirm
+//= require chosen-jquery
+//= require common
 //= require_tree .
