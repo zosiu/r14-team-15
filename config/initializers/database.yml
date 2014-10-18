@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  host: localhost
+  username: postgres
+  password: postgres
+  database: coding_romeo
+
+test:
+  adapter: postgresql
+  host: localhost
+  username: postgres
+  password: postgres
+  database: coding_romeo_test
