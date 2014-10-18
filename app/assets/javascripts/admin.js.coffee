@@ -4,3 +4,10 @@
 
 #//= require metisMenu
 #//= require raphael.min
+#//= require jquery.dataTables
+#//= require dataTables.bootstrap
+
+$ ->
+  $('.dataTable').dataTable
+    'iDisplayLength': 25
+

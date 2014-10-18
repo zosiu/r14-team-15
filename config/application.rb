@@ -29,7 +29,9 @@ module CodingRomeo
 
     config.assets.precompile += [ 'classie.js', 'cbpAnimatedHeader.js',
                                   'jquery.easing.min.js',
-                                  'raphael.min.js', 'metisMenu.js' ]
+                                  'raphael.min.js', 'metisMenu.js',
+                                  'jquery.dataTables.js',
+                                  'dataTables.bootstrap.js' ]
 
   end
 end

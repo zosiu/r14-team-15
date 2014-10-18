@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'admin', to: 'admin#index', as: 'admin_root'
+  get 'admin/projects', to: 'admin#projects', as: 'admin_projects'
+
   post 'guest_login', to: 'welcome#guest_login', as: :guest_login
 
 

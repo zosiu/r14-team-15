@@ -42,4 +42,8 @@ module ApplicationHelper
   def user_devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def action?(*action)
+    action.include?(params[:action])
+  end
 end

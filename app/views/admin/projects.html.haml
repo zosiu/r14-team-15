@@ -1,0 +1,28 @@
+.row
+  .col-lg-12
+    %h1.page-header Projects
+  / /.col-lg-12
+/ /.row
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-body
+        .table-responsive
+          %table.dataTable.table.table-striped.table-bordered.table-hover
+            %thead
+              %tr
+                %th Repository name
+                %th Successful builds
+                %th Failed builds
+                %th Stopped builds
+                %th Developers
+                %th Grade
+            %tbody
+              - codeship_projects.each do |project|
+                %tr{class: "cycle('odd', 'even') grade#{project.grade}"}
+                  %td= project.repository_name
+                  %td.center= project.green_builds.count
+                  %td.center= project.red_builds.count
+                  %td.center= project.gray_builds.count
+                  %td.center= project.developers.count
+                  %td.center= project.grade
