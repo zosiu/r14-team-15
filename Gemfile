@@ -30,6 +30,8 @@ gem 'rails_12factor', group: :production
 
 gem 'unicorn'
 
+gem 'rollbar'
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'dotenv-rails'
