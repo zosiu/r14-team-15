@@ -20,6 +20,7 @@ gem 'bootstrap-sass'
 gem 'twitter-bootstrap-rails-confirm', github: 'bluerail/twitter-bootstrap-rails-confirm', ref: '92dd75'
 gem 'chosen-sass-bootstrap-rails'
 gem 'autoprefixer-rails'
+gem 'font-awesome-rails'
 
 gem 'devise'
 
