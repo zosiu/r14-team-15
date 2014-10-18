@@ -17,23 +17,4 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'chosen_bootstrap';
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin: 0 0 100px;
-}
-
-footer {
-  background-color: #0d747c;
-  border-top: 1px solid #000;
-  position: absolute;
-  padding: 17px 0 18px 0;
-  left: 0;
-  bottom: 0;
-  height: 50px;
-  width: 100%;
-}
+@import 'font-awesome';

@@ -1,2 +1,126 @@
-%h1 O HAI
-%p Let's rumble!
+!!! 5
+%html(lang='en')
+  %head
+    %meta(charset='utf-8')
+    %meta(http-equiv='X-UA-Compatible' content='IE=Edge,chrome=1')
+    %meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    %title= 'Coding Romeo'
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    %link{href: 'http://fonts.googleapis.com/css?family=Montserrat:400,700', rel: 'stylesheet', type: 'text/css'}/
+    %link{href: 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', rel: 'stylesheet', type: 'text/css'}/
+    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png', sizes: '144x144'
+    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png', sizes: '114x114'
+    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png', sizes: '72x72'
+    = favicon_link_tag 'apple-touch-icon-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png'
+    = favicon_link_tag 'favicon.ico', rel: 'shortcut icon'
+    = javascript_include_tag 'application'
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js'
+
+
+  %body#page-top.index
+    / Navigation
+    %nav#nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header.page-scroll
+          %button.navbar-toggle{'data-target' => '#bs-example-navbar-collapse-1', 'data-toggle' => 'collapse', type: 'button'}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: '#page-top'} Coding Romeo
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li.hidden
+              %a{href: '#page-top'}
+            %li.page-scroll
+              %a{href: '#portfolio'} What's this?
+            %li.page-scroll
+              %a{href: '#about'} Meet Violet
+            %li.page-scroll
+              %a{href: '#contact'} Try it!
+        / /.navbar-collapse
+      / /.container-fluid
+    / Header
+    %header
+      .container
+        .row
+          .col-lg-12
+            = image_tag 'welcome/profile.png', class: 'img-responsive'
+            .intro-text
+              %span.name Coding Romeo
+              %hr.star-light/
+              %span.skills Codeship.io build statistics & build notifications via Nabaztag:tag
+    / Portfolio Grid Section
+    %section#portfolio
+      .container
+        .row
+          .col-lg-12.text-center
+            %h2 What's this?
+            %hr.star-primary/
+        .row
+          .col-lg-4.col-lg-offset-2
+            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
+          .col-lg-4
+            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
+    / About Section
+    %section#about.success
+      .container
+        .row
+          .col-lg-12.text-center
+            %h2 Meet Violet
+            %hr.star-light/
+        .row
+          .col-lg-4.col-lg-offset-2
+            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
+          .col-lg-4
+            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
+    / Contact Section
+    %section#contact
+      .container
+        .row
+          .col-lg-12.text-center
+            %h2 Register
+            %hr.star-primary/
+        .row
+          .col-lg-8.col-lg-offset-2
+            %form#contactForm{name: 'sentMessage', novalidate: ''}
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  %label Email Address
+                  %input#email.form-control{'data-validation-required-message' => 'Please enter your email address.', placeholder: 'Email Address', required: '', type: 'email'}/
+                  %p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  %label Password
+                  %input#phone.form-control{'data-validation-required-message' => 'Please enter your password.', placeholder: 'Password', required: '', type: 'password'}/
+                  %p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  %label Password confirmation
+                  %textarea#message.form-control{'data-validation-required-message' => 'Please your password one more time.', placeholder: 'Password again', required: '', type: 'password'}
+                  %p.help-block.text-danger
+              %br/
+              #success
+              .row
+                .form-group.col-xs-12
+                  %button.btn.btn-success.btn-lg{type: 'submit'} Send
+          .col-lg-8.col-lg-offset-2.text-center
+            %a.btn.btn-lg.btn-outline{href: '#'}
+              %i.fa.fa-download
+              Download Theme
+    / Footer
+    %footer.text-center
+      .footer-below
+        .container
+          .row
+            .col-lg-12
+              codingkitten # RailsRumble 2014
+    / Scroll to Top Button (Only visible on small and extra-small screen sizes)
+    .scroll-top.page-scroll.visible-xs.visble-sm
+      %a.btn.btn-primary{:href => '#page-top'}
+        %i.fa.fa-chevron-up
