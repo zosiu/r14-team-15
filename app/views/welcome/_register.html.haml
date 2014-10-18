@@ -1,0 +1,40 @@
+#registerModal.portfolio-modal.modal.fade{'aria-hidden' => 'true', role: 'dialog', tabindex: '-1'}
+  .modal-content
+    .close-modal{'data-dismiss' => 'modal'}
+      .lr
+        .rl
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          .modal-body.text-center
+            %h2 Registration
+            %hr.star-primary/
+
+            = simple_form_for(user_resource, as: user_resource_name, url: registration_path(user_resource_name), html: { id: 'registrationForm' }, remote: true, format: :json) do |f|
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  = f.input :email, autofocus: true, placeholder: 'Email address', input_html: { class: '.form-control', size: 128 }, required: false
+                  %p#email-error.help-block.text-danger
+
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  = f.input :codeship_api_token, placeholder: 'Codeship api token', input_html: { class: '.form-control', size: 128 }, required: false
+                  %p#codeship-api-token-error.help-block.text-danger
+
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  = f.input :password, placeholder: 'Password', input_html: { class: '.form-control', size: 128 }, required: false
+                  %p#password-error.help-block.text-danger
+
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  = f.input :password_confirmation, placeholder: 'Password again', input_html: { class: '.form-control', size: 128 }, required: false
+                  %p#password-confirmation-error.help-block.text-danger
+
+              .row
+                .form-group.col-xs-12
+                  = f.button :submit, 'Register', class: 'btn btn-success btn-lg'
+
+            %button.btn.btn-default{'data-dismiss' => 'modal', type: 'button'}
+              %i.fa.fa-times
+              Close
