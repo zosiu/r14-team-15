@@ -10,7 +10,7 @@
             %h2 Registration
             %hr.star-primary/
 
-            = simple_form_for(user_resource, as: user_resource_name, url: registration_path(user_resource_name), html: { id: 'registrationForm' }, remote: true, format: :json) do |f|
+            = simple_form_for(user_resource, as: user_resource_name, url: user_registration_path, html: { id: 'registrationForm', method: :post }, remote: true, format: :json) do |f|
               .row.control-group
                 .form-group.col-xs-12.floating-label-form-group.controls
                   = f.input :email, autofocus: true, placeholder: 'Email address', input_html: { class: '.form-control', size: 128 }, required: false
