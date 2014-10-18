@@ -32,8 +32,11 @@
                   %p#password-confirmation-error.help-block.text-danger
 
               .row
-                .form-group.col-xs-12
+                .form-group.col-xs-6
                   = f.button :submit, 'Register', class: 'btn btn-success btn-lg'
+
+                .form-group.col-xs-6
+                  = link_to 'Sign in as a guest', guest_login_path, method: :post, class: 'btn btn-success btn-lg'
 
             %button.btn.btn-default{'data-dismiss' => 'modal', type: 'button'}
               %i.fa.fa-times

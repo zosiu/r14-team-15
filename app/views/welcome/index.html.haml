@@ -73,6 +73,12 @@
             %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
             %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
             %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
+        .row
+          .col-lg-4.col-lg-offset-2.text-center
+            %a{href: '#registerModal', 'data-toggle' => 'modal', class: 'btn btn-success btn-lg'} Register
+          .col-lg-4.text-center
+            = link_to 'Sign in as a guest', guest_login_path, method: :post, class: 'btn btn-success btn-lg'
+
     / Footer
     %footer.text-center
       .footer-below
