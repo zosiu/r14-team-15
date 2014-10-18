@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'admin', to: 'admin#index', as: 'admin_root'
+  post 'guest_login', to: 'welcome#guest_login', as: :guest_login
+
 
   mount LetterOpenerWeb::Engine, at: '/letters' if Rails.env.development?
 end
