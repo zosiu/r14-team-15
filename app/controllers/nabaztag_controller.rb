@@ -24,5 +24,4 @@ class NabaztagController < ApplicationController
 
     redirect_to admin_nabaztag_settings_path
   end
-
 end
