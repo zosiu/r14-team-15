@@ -24,6 +24,8 @@ gem 'font-awesome-rails'
 
 gem 'devise'
 
+gem 'faker'
+
 gem 'inherited_resources'
 
 gem 'rails_12factor', group: :production
