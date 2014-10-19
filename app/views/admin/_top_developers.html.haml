@@ -2,40 +2,15 @@
   .panel-heading
     %i.fa.fa-users.fa-fw
     Top developers
-  / /.panel-heading
   .panel-body
     .list-group
-      %a.list-group-item{href: '#'}
-        %i.fa.fa-user.fa-fw
-        ringo
-        %span.pull-right.text-muted.small
-          100
-          %i.fa.fa-thumbs-up.fa-fw
-          2
-          %i.fa.fa-thumbs-down.fa-fw
-      %a.list-group-item{href: '#'}
-        %i.fa.fa-user.fa-fw
-        paul
-        %span.pull-right.text-muted.small
-          85
-          %i.fa.fa-thumbs-up.fa-fw
-          10
-          %i.fa.fa-thumbs-down.fa-fw
-      %a.list-group-item{href: '#'}
-        %i.fa.fa-user.fa-fw
-        john
-        %span.pull-right.text-muted.small
-          62
-          %i.fa.fa-thumbs-up.fa-fw
-          12
-          %i.fa.fa-thumbs-down.fa-fw
-      %a.list-group-item{href: '#'}
-        %i.fa.fa-user.fa-fw
-        george
-        %span.pull-right.text-muted.small
-          73
-          %i.fa.fa-thumbs-up.fa-fw
-          40
-          %i.fa.fa-thumbs-down.fa-fw
-    / /.list-group
+      - top_developers.each do |developer|
+        %a.list-group-item{href: admin_developer_builds_path(developer.name)}
+          %i.fa.fa-user.fa-fw
+          = developer.name
+          %span.pull-right.text-muted.small
+            = developer_codeship_builds(developer).green.count
+            %i.fa.fa-thumbs-up.fa-fw
+            = developer_codeship_builds(developer).red.count
+            %i.fa.fa-thumbs-down.fa-fw
     %a.btn.btn-default.btn-block{href: admin_developers_path} View All Developers

@@ -28,9 +28,19 @@ class AdminController < ApplicationController
   protected
 
   def codeship_developer
-    current_user.codeship_committers.find_by_name params[:developer]
+    codeship_committers.find_by_name params[:developer]
   end
   helper_method :codeship_developer
+
+  def top_developers
+    codeship_committers.top
+  end
+  helper_method :top_developers
+
+  def top_projects
+    codeship_projects.top
+  end
+  helper_method :top_projects
 
   def codeship_developer_builds
     codeship_builds.where codeship_committer: codeship_developer

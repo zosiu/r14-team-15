@@ -4,5 +4,5 @@
       .col-xs-3
         %i.fa.fa-thumbs-down.fa-5x
       .col-xs-9.text-right
-        .huge= codeship_developer.codeship_builds.red.count
+        .huge= developer_codeship_builds(codeship_developer).red.count
         %div Failing builds

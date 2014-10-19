@@ -19,6 +19,10 @@ class CodeshipProject < ActiveRecord::Base
   validates :codeship_project_uid, presence: true, uniqueness: true
   validates :repository_name, presence: true
 
+  def self.top
+    all.sort_by(&:score).reverse.first(4)
+  end
+
   def green_builds
     codeship_builds.green
   end
