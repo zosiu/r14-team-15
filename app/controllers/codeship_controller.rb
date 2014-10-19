@@ -41,7 +41,7 @@ class CodeshipController < ApplicationController
       status = build.status == 'success' ? 'successful' : 'failed'
       violet = build.status == 'success' ? 'happy' : 'sad'
 
-      message1 = "#{status} build on project #{build.codeship_project.repository_name} by #{build.codeship_committer.name}. Violet is #{violet}"
+      message1 = "#{status} build in project #{build.codeship_project.repository_name} on branch #{build.branch} by #{build.codeship_committer.name}. Violet is #{violet}"
       message2 = "I repeat: #{message1}"
       NabaztagNotification.create nabaztag_uid: user.nabaztag_uid,
                                   message: message1
