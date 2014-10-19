@@ -5,7 +5,7 @@
   / /.panel-heading
   .panel-body
     %ul.timeline
-      - codeship_builds.timeline.reverse.each do |build|
+      - codeship_builds.timeline.each do |build|
         %li{class: cycle('', 'timeline-inverted')}
           .timeline-badge{class: build_timeline_class(build)}
             %i{class: "fa #{build_fa_class(build)}"}
