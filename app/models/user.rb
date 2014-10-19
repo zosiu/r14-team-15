@@ -12,6 +12,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  codeship_uid           :string(255)
+#  nabaztag_uid           :string(255)
 #
 
 require 'codeship'

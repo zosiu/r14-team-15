@@ -36,6 +36,19 @@ class CodeshipController < ApplicationController
     # user - project relation
     CodeshipProjectRelation.where(user: user, codeship_project: project).first_or_create!
 
+    # nabaztag nofitication
+    if user.nabaztag_uid && ['success', 'error'].include?(build.status)
+      status = build.status == 'success' ? 'successful' : 'failed'
+      violet = build.status == 'success' ? 'happy' : 'sad'
+
+      message1 = "#{status} build on project #{build.codeship_project.repository_name} by #{build.codeship_committer.name}. Violet is #{violet}"
+      message2 = "I repeat: #{message1}"
+      NabaztagNotification.create nabaztag_uid: current_user.nabaztag_uid,
+                                  message: message1
+      NabaztagNotification.create nabaztag_uid: current_user.nabaztag_uid,
+                                  message: message2
+    end
+
     render json: {}, status: :ok
   rescue => e
     render json: { error: e.message }, status: 422
