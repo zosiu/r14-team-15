@@ -5,12 +5,32 @@
         %a{href: admin_root_path, class: (action?('index') ? 'active' : nil) }
           %i.fa.fa-heart-o.fa-fw
           Dashboard
-      %li
+      %li{class: (builds_action? ? 'active' : nil)}
         %a{href: '#'}
           %i.fa.fa-gears.fa-fw
           Builds
-      %li
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            %a{href: admin_builds_path, class: (action?('builds') ? 'active' : nil)}
+              All builds
+          %li
+            %a{href: admin_green_builds_path, class: (action?('green_builds') ? 'active' : nil)}
+              Green builds
+          %li
+            %a{href: admin_red_builds_path, class: (action?('red_builds') ? 'active' : nil)}
+              Red builds
+      %li{class: (action?('project_builds') ? 'active' : nil)}
         %a{href: '#'}
+          %i.fa.fa-gears.fa-fw
+          Project builds
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          - codeship_projects.each do |project|
+            %li
+              %a{href: admin_project_builds_path(project.repository_name), class: (project_build_action?(project) ? 'active' : nil) }= project.repository_name
+      %li
+        %a{href: admin_developers_path, class: (action?('developers', 'developer_builds') ? 'active' : nil)}
           %i.fa.fa-users.fa-fw
           Developers
       %li

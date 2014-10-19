@@ -4,9 +4,9 @@
       .col-xs-3
         %i.fa.fa-thumbs-up.fa-5x
       .col-xs-9.text-right
-        .huge 12
+        .huge= codeship_builds.green.count
         %div Successful builds
-  %a{:href => "#"}
+  %a{href: admin_green_builds_path}
     .panel-footer
       %span.pull-left View Details
       %span.pull-right

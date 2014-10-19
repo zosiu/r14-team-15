@@ -2,7 +2,6 @@
   .panel-heading
     %i.fa.fa-cubes.fa-fw
     Top projects
-  / /.panel-heading
   .panel-body
     .list-group
       %a.list-group-item{href: '#'}
@@ -37,7 +36,4 @@
           %i.fa.fa-thumbs-up.fa-fw
           55
           %i.fa.fa-thumbs-down.fa-fw
-      / /.list-group
-    %a.btn.btn-default.btn-block{:href => "#"} View All Projects
-  / /.panel-body
-/ /.panel
+    %a.btn.btn-default.btn-block{href: admin_projects_url} View All Projects

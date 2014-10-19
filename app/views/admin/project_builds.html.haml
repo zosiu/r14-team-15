@@ -1,0 +1,26 @@
+.row
+  .col-lg-12
+    %h1.page-header= "Builds for #{codeship_project.repository_name}"
+  / /.col-lg-12
+/ /.row
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-body
+        .table-responsive
+          %table.dataTable.table.table-striped.table-bordered.table-hover
+            %thead
+              %tr
+                %th Branch
+                %th Status
+                %th Commit
+                %th Developer
+                %th Message
+            %tbody
+              - codeship_project.codeship_builds.each do |build|
+                %tr{class: cycle('odd', 'even')}
+                  %td= build.branch
+                  %td= build.status
+                  %td= build_commit_link build
+                  %td= developer_link build.codeship_committer
+                  %td= build_link build

@@ -4,9 +4,9 @@
       .col-xs-3
         %i.fa.fa-users.fa-5x
       .col-xs-9.text-right
-        .huge 124
+        .huge= codeship_committers.count
         %div Developers
-  %a{:href => "#"}
+  %a{href: admin_developers_path}
     .panel-footer
       %span.pull-left View Details
       %span.pull-right

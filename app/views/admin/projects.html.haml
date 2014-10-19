@@ -14,15 +14,13 @@
                 %th Repository name
                 %th Successful builds
                 %th Failed builds
-                %th Stopped builds
                 %th Developers
                 %th Grade
             %tbody
               - codeship_projects.each do |project|
                 %tr{class: "cycle('odd', 'even') grade#{project.grade}"}
-                  %td= project.repository_name
+                  %td= project_link project
                   %td.center= project.green_builds.count
                   %td.center= project.red_builds.count
-                  %td.center= project.gray_builds.count
                   %td.center= project.developers.count
                   %td.center= project.grade

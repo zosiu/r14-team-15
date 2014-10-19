@@ -26,6 +26,9 @@ class User < ActiveRecord::Base
   has_many :codeship_project_relations, dependent: :destroy
   has_many :codeship_projects, through: :codeship_project_relations
 
+  has_many :codeship_builds, through: :codeship_projects
+  has_many :codeship_committers, -> { distinct }, through: :codeship_builds
+
   after_create :fetch_codeship_projects
 
   private
