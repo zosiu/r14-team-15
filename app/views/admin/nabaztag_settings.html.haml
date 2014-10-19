@@ -18,10 +18,23 @@
         - config_url root_url
 
   .col-lg-12
-    = simple_form_for('nabaztag', url: nabaztag_setup_path, html: { id: 'nabaztagForm', method: :post }) do |f|
+    %h2 Setup your Nabaztag:tag
+
+    = simple_form_for('nabaztag', url: nabaztag_setup_path, html: { id: 'nabaztagSForm', method: :post }) do |f|
       .row.control-group
         .form-group.col-xs-12.floating-label-form-group.controls
           = f.input :mac_address, autofocus: true, placeholder: 'Your nabaztad uid (MAC address)', input_html: { class: '.form-control', size: 128 }, required: false
       .row
         .form-group.col-xs-12
           = f.button :submit, 'Save', class: 'btn btn-success btn-lg'
+
+  .col-lg-12
+    %h2 Try your Nabaztag:tag
+
+    = simple_form_for('nabaztag', url: nabaztag_tryme_path, html: { id: 'nabaztagTForm', method: :post }) do |f|
+      .row.control-group
+        .form-group.col-xs-12.floating-label-form-group.controls
+          = f.input :message, autofocus: true, placeholder: 'Message', input_html: { class: '.form-control', size: 128 }, required: false
+      .row
+        .form-group.col-xs-12
+          = f.button :submit, 'Say it!', class: 'btn btn-success btn-lg'

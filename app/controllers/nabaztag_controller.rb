@@ -16,4 +16,13 @@ class NabaztagController < ApplicationController
     current_user.update_attribute :nabaztag_uid, uid
     redirect_to admin_nabaztag_settings_path
   end
+
+  def nabaztag_tryme
+    message = params[:nabaztag][:message]
+    NabaztagNotification.create nabaztag_uid: current_user.nabaztag_uid,
+                                message: message
+
+    redirect_to admin_nabaztag_settings_path
+  end
+
 end
