@@ -31,5 +31,8 @@ Rails.application.routes.draw do
 
   post 'guest_login', to: 'welcome#guest_login', as: :guest_login
 
+  get 'bc.jsp', to: 'nabaztag#bytecode', as: :nabaztag_bytecode
+  get 'nabaztag/:nabaztag_id', to: 'nabaztag#ping', as: :nabaztag_ping
+
   mount LetterOpenerWeb::Engine, at: '/letters' if Rails.env.development?
 end
