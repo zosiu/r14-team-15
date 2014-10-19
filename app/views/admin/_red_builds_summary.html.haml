@@ -4,9 +4,9 @@
       .col-xs-3
         %i.fa.fa-thumbs-down.fa-5x
       .col-xs-9.text-right
-        .huge 13
-        %div Failed builds
-  %a{:href => "#"}
+        .huge= codeship_builds.red.count
+        %div Failing builds
+  %a{href: admin_red_builds_path}
     .panel-footer
       %span.pull-left View Details
       %span.pull-right

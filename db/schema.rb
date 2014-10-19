@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20141018201628) do
     t.string   "build_url"
     t.string   "commit_url"
     t.integer  "codeship_project_id"
+    t.integer  "codeship_build_uid"
     t.string   "status"
     t.string   "commit_sha"
     t.string   "short_commit_sha"

@@ -4,6 +4,7 @@ class CreateCodeshipBuilds < ActiveRecord::Migration
       t.string :build_url
       t.string :commit_url
       t.integer :codeship_project_id, index: true
+      t.integer :codeship_build_uid
       t.string :status
       t.string :commit_sha
       t.string :short_commit_sha

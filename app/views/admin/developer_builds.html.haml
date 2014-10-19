@@ -1,0 +1,37 @@
+.row
+  .col-lg-12
+    %h1.page-header= codeship_developer.name
+
+.row
+  .col-lg-3.col-md-6
+    = render 'developer_grade_summary'
+  .col-lg-3.col-md-6
+    = render 'developer_projects_summary'
+  .col-lg-3.col-md-6
+    = render 'developer_green_builds_summary'
+  .col-lg-3.col-md-6
+    = render 'developer_red_builds_summary'
+.row
+  .col-lg-12
+    %h1.page-header Builds
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-body
+        .table-responsive
+          %table.dataTable.table.table-striped.table-bordered.table-hover
+            %thead
+              %tr
+                %th Project
+                %th Branch
+                %th Status
+                %th Commit
+                %th Message
+            %tbody
+              - codeship_developer_builds.each do |build|
+                %tr{class: cycle('odd', 'even')}
+                  %td= project_link build.codeship_project
+                  %td= build.branch
+                  %td= build.status
+                  %td= build_commit_link build
+                  %td= build_link build

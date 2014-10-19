@@ -38,6 +38,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'faker'
+
   gem 'spring'
   gem 'foreman'
 
@@ -54,7 +56,6 @@ group :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'turnip'
-  gem 'faker'
   gem 'database_cleaner'
   gem 'nyan-cat-formatter'
   gem 'shoulda-matchers'

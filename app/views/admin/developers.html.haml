@@ -1,0 +1,26 @@
+.row
+  .col-lg-12
+    %h1.page-header Developers
+  / /.col-lg-12
+/ /.row
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-body
+        .table-responsive
+          %table.dataTable.table.table-striped.table-bordered.table-hover
+            %thead
+              %tr
+                %th Developer name
+                %th Successful builds
+                %th Failed builds
+                %th Projects
+                %th Grade
+            %tbody
+              - codeship_committers.each do |developer|
+                %tr{class: "cycle('odd', 'even') grade#{developer.grade}"}
+                  %td= link_to developer.name, admin_developer_builds_path(developer.name)
+                  %td.center= developer.green_builds.count
+                  %td.center= developer.red_builds.count
+                  %td.center= developer.projects.count
+                  %td.center= developer.grade

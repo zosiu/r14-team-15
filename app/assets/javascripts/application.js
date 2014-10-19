@@ -16,4 +16,3 @@
 //= require twitter/bootstrap/rails/confirm
 //= require chosen-jquery
 //= require common
-//= require_tree .

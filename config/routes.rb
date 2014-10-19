@@ -16,9 +16,15 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admin#index', as: 'admin_root'
   get 'admin/projects', to: 'admin#projects', as: 'admin_projects'
+  get 'admin/developers', to: 'admin#developers', as: 'admin_developers'
+
+  get 'admin/builds', to: 'admin#builds', as: 'admin_builds'
+  get 'admin/builds/red', to: 'admin#red_builds', as: 'admin_red_builds'
+  get 'admin/builds/green', to: 'admin#green_builds', as: 'admin_green_builds'
+  get 'admin/builds/:project', to: 'admin#project_builds', as: 'admin_project_builds'
+  get 'admin/:developer/builds', to: 'admin#developer_builds', as: 'admin_developer_builds'
 
   post 'guest_login', to: 'welcome#guest_login', as: :guest_login
-
 
   mount LetterOpenerWeb::Engine, at: '/letters' if Rails.env.development?
 end
