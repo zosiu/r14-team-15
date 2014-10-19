@@ -9,11 +9,10 @@
 
 $ ->
   $('.dataTable').dataTable
-    'iDisplayLength': 25
+    'iDisplayLength': 10
 
 $ ->
   $("#side-menu").metisMenu()
-  return
 
 #Loads the correct sidebar on window load,
 #collapses the sidebar on window resize.
@@ -31,6 +30,3 @@ $ ->
     height = height - topOffset
     height = 1  if height < 1
     $("#page-wrapper").css "min-height", (height) + "px"  if height > topOffset
-    return
-
-  return
