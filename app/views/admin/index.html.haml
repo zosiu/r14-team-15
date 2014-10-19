@@ -1,5 +1,11 @@
 .row
   .col-lg-12
+    - if codeship_builds.count.zero?
+      .alert.alert-info.alert-dismissable
+        %button{type: 'button', class: 'close', 'data-dismiss' => 'alert', 'aria-hidden' => true} x
+        Hey, Romeo, where are your builds? You should try to make Violet happy... Visit the
+        = link_to 'codeship settings page', admin_codeship_settings_path
+        to get started!
     %h1.page-header Dashboard
 .row
   .col-lg-3.col-md-6
