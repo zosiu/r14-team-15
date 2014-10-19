@@ -30,7 +30,7 @@ class CodeshipController < ApplicationController
     build.commit_sha = build_attrs['commit_id']
     build.short_commit_sha = build_attrs['short_commit_id']
     build.message = build_attrs['message']
-    build.branch = build_attrs['message']
+    build.branch = build_attrs['branch']
     build.save!
 
     # user - project relation
