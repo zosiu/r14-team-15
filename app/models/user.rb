@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :codeship_api_token, presence: true
+  # validates :codeship_api_token, presence: true
 
   has_many :codeship_project_relations, dependent: :destroy
   has_many :codeship_projects, through: :codeship_project_relations

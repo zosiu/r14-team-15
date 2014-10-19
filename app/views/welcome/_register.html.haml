@@ -18,11 +18,6 @@
 
               .row.control-group
                 .form-group.col-xs-12.floating-label-form-group.controls
-                  = f.input :codeship_api_token, placeholder: 'Codeship api token', input_html: { class: '.form-control', size: 128 }, required: false
-                  %p#codeship-api-token-error.help-block.text-danger
-
-              .row.control-group
-                .form-group.col-xs-12.floating-label-form-group.controls
                   = f.input :password, placeholder: 'Password', input_html: { class: '.form-control', size: 128 }, required: false
                   %p#password-error.help-block.text-danger
 
