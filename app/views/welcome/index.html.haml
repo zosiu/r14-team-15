@@ -67,22 +67,28 @@
         .row
           .col-lg-8.col-lg-offset-2.text-center
             %iframe.vine-embed{frameborder: 0, height: 600, src: 'https://vine.co/v/ObvtAbIxM1Z/embed/simple?related=0&audio=1', width: '600'}
-          .col-lg-4.col-lg-offset-2
-            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
-            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
-            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
-          .col-lg-4
-            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
-            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
-            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id arcu ac ligula volutpat ullamcorper at sed tortor. Maecenas id enim et odio iaculis gravida. Donec cursus rutrum interdum. Aliquam fermentum semper turpis, vel ultrices diam. Integer id leo erat. Vivamus molestie elit eget metus eleifend pulvinar. Fusce iaculis sodales enim, ut aliquam est porta ut.
+          .col-lg-8.col-lg-offset-2
+            %p
+              Violet likes green, really hates red, and Violet loves Romeo!
+            %p
+              This spunky little rabbit was produced from 2005 by French company Violet, had a really turbulent history (
+              = link_to 'read about it!', 'http://en.wikipedia.org/wiki/Nabaztag'
+              ), and now she's ready to announce you the status of your builds with Romeo acting as her server.
+            %p
+              Don't have a bunny? Worry not, Romeo is quite capable even when alone, providing various statistics about your
+              = link_to 'Codeship.io', 'https://www.codeship.io/'
+              projects,
+              fearlessly grading your projects and developers based on the ratio of failed and successful builds.
+            %p
+              Take a look at the awesome screenshot below:
+              = image_tag 'romeo_dashboard.png', class: 'img-responsive', 'data-toggle' => 'magnify'
+            %p
+              Register now, and start coding for Romeo, or just sign in as a guest and witness Romeo working furiously with lots and lots of fake data.
           .row
             .col-lg-8.col-lg-offset-2.text-center
-              %a{href: '#registerModal', 'data-toggle' => 'modal', class: 'btn btn-success btn-lg'} Register
+              %a{href: '#registerModal', 'data-toggle' => 'modal', class: 'btn btn-success btn-lg'} register
               or
-              = link_to 'Sign in as a guest', guest_login_path, method: :post, class: 'btn btn-success btn-lg'
-          .row
-            .col-lg-8.col-lg-offset-2.text-center
-              %iframe.vine-embed{frameborder: 0, height: 600, src: 'https://vine.co/v/ObvTWEFV39b/embed/simple?related=0&audio=1', width: '600'}
+              = link_to 'sign in as a guest', guest_login_path, method: :post, class: 'btn btn-success btn-lg'
     / Footer
     %footer.text-center
       .footer-below
