@@ -2,7 +2,7 @@
   .col-lg-12
     %h1.page-header Codeship settings
 .row
-  .col-lg-8
+  .col-lg-12
     .panel.panel-primary
       .panel-heading Codeship webhook url
       .panel-body
@@ -10,8 +10,3 @@
         .animated-text{style: 'display:none;'}= current_user.codeship_uid
       .panel-footer
         - config_url user_codeship_webhook_url(current_user.codeship_uid)
-
-  .col-lg-4
-    .panel.panel-primary
-      .panel-heading Codeship api token
-      .panel-body= current_user.codeship_api_token
