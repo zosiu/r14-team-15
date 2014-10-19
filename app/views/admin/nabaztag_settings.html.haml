@@ -5,7 +5,7 @@
     .panel.panel-primary
       .panel-heading Nabaztag:tag uid
       .panel-body
-        -# = image_tag 'codeship_setup.png', style: 'max-width:100%;height:auto;'
+        = link_to 'Nabaztag setup guide', 'http://chris-alexander.co.uk/on-engineering/life/nabaztag-setup-guide'
       .panel-footer
         - config_url current_user.nabaztag_uid
 
@@ -23,7 +23,7 @@
     = simple_form_for('nabaztag', url: nabaztag_setup_path, html: { id: 'nabaztagSForm', method: :post }) do |f|
       .row.control-group
         .form-group.col-xs-12.floating-label-form-group.controls
-          = f.input :mac_address, autofocus: true, placeholder: 'Your nabaztad uid (MAC address)', input_html: { class: '.form-control', size: 128 }, required: false
+          = f.input :mac_address, autofocus: true, placeholder: 'Your nabaztad uid (MAC address)', input_html: { class: '.form-control', size: 128, value: current_user.nabaztag_uid }, required: false
       .row
         .form-group.col-xs-12
           = f.button :submit, 'Save', class: 'btn btn-success btn-lg'

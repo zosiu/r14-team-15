@@ -17,3 +17,4 @@
 //= require chosen-jquery
 //= require jquery.easing.min
 //= require welcome
+//= require bootstrap-magnify

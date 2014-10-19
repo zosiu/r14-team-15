@@ -14,4 +14,5 @@ Rails.application.config.assets.precompile += [ 'classie.js',
                                                 'metisMenu.js',
                                                 'jquery.dataTables.js',
                                                 'dataTables.bootstrap.js',
+                                                'bootstrap-magnify,js',
                                                 'admin.js' ]
