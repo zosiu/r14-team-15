@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   has_many :codeship_committers, -> { distinct }, through: :codeship_builds
 
   before_save :ensure_codeship_uid
-  after_create :fetch_codeship_projects
+  # after_create :fetch_codeship_projects
 
   private
 
