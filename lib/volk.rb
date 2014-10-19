@@ -1,5 +1,4 @@
 class Volk
-
   INVERSION_TABLE = [0x01, 0xAB, 0xCD, 0xB7, 0x39, 0xA3, 0xC5, 0xEF,
                      0xF1, 0x1B, 0x3D, 0xA7, 0x29, 0x13, 0x35, 0xDF,
                      0xE1, 0x8B, 0xAD, 0x97, 0x19, 0x83, 0xA5, 0xCF,
@@ -17,14 +16,17 @@ class Volk
                      0x21, 0xCB, 0xED, 0xD7, 0x59, 0xC3, 0xE5, 0x0F,
                      0x11, 0x3B, 0x5D, 0xC7, 0x49, 0x33, 0x55, 0xFF]
 
-
   def initialize(bunny_id)
     @bunny_id = bunny_id
   end
 
   def nabaztag_response
-    if true
-      send_byte_array nabaztag_message('violet is happy')
+    notifcation = NabaztagNotification.for_bunny @bunny_id
+
+    if notifcation
+      message = notifcation.message
+      notifcation.destroy
+      send_byte_array nabaztag_message(message)
     else
       send_byte_array nabaztag_ambient
     end
@@ -32,7 +34,7 @@ class Volk
 
   private
 
-  def send_byte_array byte_array
+  def send_byte_array(byte_array)
     byte_array.pack('c*')
   end
 
@@ -80,5 +82,4 @@ class Volk
     url = "http://translate.google.com/translate_tts?ie=UTF-8&q=#{m}&tl=#{l}"
     "MS #{URI.encode(url)}"
   end
-
 end

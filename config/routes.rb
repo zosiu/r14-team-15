@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
   get 'bc.jsp', to: 'nabaztag#bytecode', as: :nabaztag_bytecode
   get 'nabaztag/:nabaztag_id', to: 'nabaztag#ping', as: :nabaztag_ping
+  post 'nabaztag/setup', to: 'nabaztag#set_nabaztag_uid', as: :nabaztag_setup
 
   mount LetterOpenerWeb::Engine, at: '/letters' if Rails.env.development?
 end
