@@ -43,9 +43,9 @@ class CodeshipController < ApplicationController
 
       message1 = "#{status} build on project #{build.codeship_project.repository_name} by #{build.codeship_committer.name}. Violet is #{violet}"
       message2 = "I repeat: #{message1}"
-      NabaztagNotification.create nabaztag_uid: current_user.nabaztag_uid,
+      NabaztagNotification.create nabaztag_uid: user.nabaztag_uid,
                                   message: message1
-      NabaztagNotification.create nabaztag_uid: current_user.nabaztag_uid,
+      NabaztagNotification.create nabaztag_uid: user.nabaztag_uid,
                                   message: message2
     end
 
