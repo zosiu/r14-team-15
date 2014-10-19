@@ -38,4 +38,12 @@ module AdminHelper
   def build_commit_link(build)
     link_to build.short_commit_sha, build.commit_url
   end
+
+  def developer_codeship_builds(developer)
+    codeship_builds.where codeship_committer: developer
+  end
+
+  def developer_codeship_projects(developer)
+    codeship_builds.where id: developer.codeship_projects.pluck(:id)
+  end
 end
