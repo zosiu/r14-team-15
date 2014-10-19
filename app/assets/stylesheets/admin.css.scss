@@ -27,15 +27,11 @@
   background-color: #233140 !important;
   margin: 0 auto !important;
   min-height: 100% !important;
+  overflow-x: hidden;
 }
 
 .panel-primary {
   border: none !important;
-}
-
-html, body {
-  overflow-x: hidden;
-  height: 100% !important;
 }
 
 body {
