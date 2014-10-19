@@ -36,10 +36,21 @@ class CodeshipProject < ActiveRecord::Base
   end
 
   def grade
-    'A'
+    case build_ratio
+    when 0..25 then 'E'
+    when 25..50 then 'D'
+    when 50..75 then 'C'
+    when 75..90 then 'B'
+    else 'A'
+    end
   end
 
   def score
-    100
+    build_ratio
+  end
+
+  def build_ratio
+    return 0 if green_builds.count.zero?
+    (1 - red_builds.count / green_builds.count.to_f) * 100
   end
 end
