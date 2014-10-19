@@ -11,6 +11,7 @@
 #  codeship_api_token     :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  codeship_uid           :string(255)
 #
 
 require 'codeship'
@@ -29,9 +30,14 @@ class User < ActiveRecord::Base
   has_many :codeship_builds, through: :codeship_projects
   has_many :codeship_committers, -> { distinct }, through: :codeship_builds
 
+  before_save :ensure_codeship_uid
   after_create :fetch_codeship_projects
 
   private
+
+  def ensure_codeship_uid
+    self.codeship_uid ||= "#{Devise.friendly_token}#{id}"
+  end
 
   def fetch_codeship_projects
     Codeship.new(codeship_api_token).projects.each do |project|

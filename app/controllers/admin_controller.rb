@@ -25,6 +25,12 @@ class AdminController < ApplicationController
   def developer_builds
   end
 
+  def codeship_settings
+  end
+
+  def nabaztag_settings
+  end
+
   protected
 
   def codeship_developer

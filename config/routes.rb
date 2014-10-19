@@ -24,6 +24,11 @@ Rails.application.routes.draw do
   get 'admin/builds/:project', to: 'admin#project_builds', as: 'admin_project_builds'
   get 'admin/:developer/builds', to: 'admin#developer_builds', as: 'admin_developer_builds'
 
+  get 'admin/codeship_settings', to: 'admin#codeship_settings', as: 'admin_codeship_settings'
+  get 'admin/nabaztag_settings', to: 'admin#nabaztag_settings', as: 'admin_nabaztag_settings'
+
+  post 'codeship/:codeship_uid/register_builds', to: 'codeship#register_builds', as: 'user_codeship_webhook'
+
   post 'guest_login', to: 'welcome#guest_login', as: :guest_login
 
   mount LetterOpenerWeb::Engine, at: '/letters' if Rails.env.development?
