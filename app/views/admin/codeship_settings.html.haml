@@ -7,6 +7,5 @@
       .panel-heading Codeship webhook url
       .panel-body
         = image_tag 'codeship_setup.png', style: 'max-width:100%;height:auto;'
-        .animated-text{style: 'display:none;'}= current_user.codeship_uid
       .panel-footer
         - config_url user_codeship_webhook_url(current_user.codeship_uid)
