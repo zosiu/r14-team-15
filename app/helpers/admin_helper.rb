@@ -45,7 +45,7 @@ module AdminHelper
   end
 
   def developer_codeship_projects(developer)
-    codeship_builds.where id: developer.codeship_projects.pluck(:id)
+    codeship_projects.where id: developer.codeship_projects.pluck(:id)
   end
 
   def config_url(url)
