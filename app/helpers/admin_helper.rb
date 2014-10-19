@@ -33,11 +33,11 @@ module AdminHelper
   end
 
   def build_link(build)
-    link_to build.message, build.build_url
+    link_to build.message, build.build_url, target: '_blank'
   end
 
   def build_commit_link(build)
-    link_to build.short_commit_sha, build.commit_url
+    link_to build.short_commit_sha, build.commit_url, target: '_blank'
   end
 
   def developer_codeship_builds(developer)

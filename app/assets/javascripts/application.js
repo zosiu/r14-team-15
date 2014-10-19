@@ -15,4 +15,5 @@
 //= require bootstrap-sprockets
 //= require twitter/bootstrap/rails/confirm
 //= require chosen-jquery
-//= require common
+//= require jquery.easing.min
+//= require_tree .
