@@ -37,7 +37,15 @@
         %a{href: admin_projects_path, class: (action?('projects') ? 'active' : nil) }
           %i.fa.fa-cubes.fa-fw
           Projects
-      %li
+      %li{class: (action?('codeship_settings', 'nabaztag_settings') ? 'active' : nil)}
         %a{href: '#'}
           %i.fa.fa-wrench.fa-fw
-          Nabaztag settings
+          Settings
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            %a{href: admin_codeship_settings_path, class: (action?('codeship_settings') ? 'active' : nil) }
+              Codeship
+          %li
+            %a{href: admin_nabaztag_settings_path, class: (action?('nabaztag_settings') ? 'active' : nil) }
+              Nabaztag:tag

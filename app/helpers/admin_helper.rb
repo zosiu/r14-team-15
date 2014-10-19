@@ -28,7 +28,8 @@ module AdminHelper
   end
 
   def project_link(project)
-    link_to project.repository_name, admin_project_builds_path(project.repository_name)
+    link_to project.repository_name,
+            admin_project_builds_path(project.repository_name)
   end
 
   def build_link(build)
@@ -45,5 +46,10 @@ module AdminHelper
 
   def developer_codeship_projects(developer)
     codeship_builds.where id: developer.codeship_projects.pluck(:id)
+  end
+
+  def config_url(url)
+    haml_tag :input, class: 'config-url', readonly: 'readonly', type: 'text',
+              value: url, onclick: 'this.select();'
   end
 end

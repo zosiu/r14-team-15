@@ -4,6 +4,13 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+.config-url {
+  width: 100%;
+  border: none;
+  cursor: copy;
+  font-weight: bold;
+}
+
 #wrapper {
   background-color: #233140 !important;
   margin: 0 auto !important;

@@ -5,6 +5,7 @@ AllCops:
     - 'Gemfile'
     - 'app/controllers/registrations_controller.rb'
     - 'app/controllers/sessions_controller.rb'
+    - 'app/controllers/codeship_controller.rb'
 Style/Documentation:
   Enabled: false
 Metrics/LineLength:
