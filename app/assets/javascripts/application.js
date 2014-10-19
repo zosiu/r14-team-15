@@ -16,4 +16,4 @@
 //= require twitter/bootstrap/rails/confirm
 //= require chosen-jquery
 //= require jquery.easing.min
-//= require_tree .
+//= require welcome
